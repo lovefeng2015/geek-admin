@@ -1,4 +1,4 @@
 
 <template>
-    <h1>这是首页</h1>
+    <h1>这是关于页面</h1>
 </template>
