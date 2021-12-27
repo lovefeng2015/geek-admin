@@ -18,6 +18,7 @@
 import { computed, defineProps, ref, defineEmits } from 'vue';
 let props = defineProps({
     value: Number,
+    modelValue: Number,
     theme: { type: String, default: 'orange' }
 })
 //console.log(props);
@@ -26,17 +27,20 @@ const themeObj = { 'black': '#00', 'white': '#fff', 'red': '#f5222d', 'orange': 
 const fontstyle = computed(() => {
     return `color:${themeObj[props.theme]}`;
 })
-let width = ref(props.value);
+let width = ref(props.modelValue);
 function mouseOver(i) {
     width.value = i;
 }
 function mouseOut() {
-    width.value = props.value;
+    width.value = props.modelValue;
 }
 const fontwidth = computed(() => `width:${width.value}em;`)
 //let emits=defineEmits('[update-rate]');
-let emits = defineEmits(['update-rate']);
-function onRate(num) { emits('update-rate', num) }
+let emits = defineEmits(['update-rate', 'update:modelValue']);
+function onRate(num) {
+    //  emits('update-rate', num)
+    emits('update:modelValue',num)
+      }
 </script>
 <style scoped>
 .rate {
