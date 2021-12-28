@@ -5,6 +5,9 @@ import {
   } from 'vue-router'
   import Home from '../pages/home.vue'
   import About from '../pages/about.vue'
+  import Rate from '../pages/rate.vue'
+  import SelfIncreasing from '../pages/selfIncreasing.vue'
+  import TodoList from '../pages/todoList.vue'
   
   const routes = [
     {
@@ -16,6 +19,21 @@ import {
       path: '/about',
       name: 'About',
       component: About
+    },
+    {
+      path: '/rate',
+      name: 'Rate',
+      component: Rate
+    },
+    {
+      path: '/selfIncreasing',
+      name: 'SelfIncreasing',
+      component: SelfIncreasing
+    },
+    {
+      path: '/todoList',
+      name: 'TodoList',
+      component: TodoList
     }
   ]
   

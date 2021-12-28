@@ -11,8 +11,11 @@ import HelloWorld from './components/HelloWorld.vue'
 </template> -->
 <template>
   <div>
-    <router-link to="/">首页</router-link> | 
-    <router-link to="/about">关于</router-link>
+    <router-link to="/">首页</router-link>|
+    <router-link to="/about">关于</router-link>|
+    <router-link to="/rate">评分</router-link>|
+    <router-link to="/selfIncreasing">自增加</router-link>|
+    <router-link to="/todoList">任务清单</router-link>
   </div>
   <router-view></router-view>
 </template>

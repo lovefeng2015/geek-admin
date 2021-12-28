@@ -19,9 +19,7 @@ h1 {
 }
 </style> -->
 <template>
-    <div>
-        <h1 @click="add">{{ count }}</h1>
-    </div>
+ 
     <div>
         <input type="text" v-model="title" @keydown.enter="addTodo" />
         <button v-if="active < all" @click="clear">清理</button>
@@ -42,15 +40,8 @@ h1 {
 <script setup>
 import { computed, ref } from 'vue';
 import { useMouse } from '../utils/mouse';
-import useStorage from '../utils/storage';
-let { x, y } = useMouse();
-let count = ref(1);
-console.log(count);
-let color = ref('red')
-function add() {
-    count.value++;
-    color.value = Math.random() > 0.5 ? 'blue' : 'red';
-}
+// import useStorage from '../utils/storage';
+// let { x, y } = useMouse();
 function useTodos() {
     let title = ref('');
     // let todos = ref([{ title: "学习vue", done: false }]);
@@ -89,7 +80,5 @@ let { title, todos, addTodo, clear, active, all, allDone } = useTodos();
 
 
   <style scoped>
-h1 {
-    color: v-bind(color);
-}
+
 </style>
