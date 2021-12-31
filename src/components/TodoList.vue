@@ -101,6 +101,7 @@ function useTodos() {
         //todos.value.splice(i, 1);//删除todo的最后一项，加入垃圾桶的动画位置不对（0,0）
     }
     function addTodo() {
+        //debugger
         if (!title.value) {
             showModal.value = true;
             setTimeout(() => { showModal.value = false }, 1500)
