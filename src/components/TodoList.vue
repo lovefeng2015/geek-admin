@@ -38,8 +38,7 @@ h1 {
             <input type="checkbox" v-model="allDone" />
             {{ active }}/{{ all }}
         </div>
-    </div>
-    <transition name="modal">
+            <transition name="modal">
         <div class="info-wrapper" v-if="showModal">
             <div class="info">哥11，你啥也没输入！</div>
         </div>
@@ -49,6 +48,8 @@ h1 {
             <div class="animate" v-show="animate.show">📋</div>
         </transition>
     </div>
+    </div>
+
 </template>
 <script setup>
 import { computed, reactive, ref } from 'vue';
@@ -137,7 +138,7 @@ let { title, todos, addTodo, clear, active, all, allDone, removeTodo } = useTodo
 </script>
 
 
-<style scoped>
+<style lang="scss" scoped>
 .info-wrapper {
     position: fixed;
     top: 20px;
@@ -187,4 +188,25 @@ let { title, todos, addTodo, clear, active, all, allDone, removeTodo } = useTodo
     z-index: 100;
     transition: all 0.5s linear;
 }
+
+
+
+$padding:10px;
+$white:#fff;
+ul {
+  width:500px;
+  margin:0 auto;
+  padding: 0;
+  li {
+    &:hover {
+      cursor: pointer;
+    }
+    list-style-type: none;
+    margin-bottom: $padding;
+    padding: $padding;
+    background: $white;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+  }
+}
+
 </style>
